@@ -1,4 +1,6 @@
-# YouTube Ad Auto-closer
+YouTube Ad Auto-closer
+=====
+
 YouTube Ad auto-closer for [Firefox][Firefox] and [Google Chrome][GoogleChrome]
 
 ### License
