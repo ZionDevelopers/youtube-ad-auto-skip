@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>YouTube Ad Auto-Closer</title>
+	<script src="includes/jquery-3.6.0.min.js"></script>
+	<script src="includes/jquery.hotkeys.js"></script>
+	<script src="includes/options.js"></script>
+	<style>
+	body {
+		margin: 25px;
+	}
+	body *{
+		font-size: 12px;
+		font-family: Arial;
+	}
+	</style>
+</head>
+<body>
+	<label>
+	  <input type="checkbox" id="enabled" value="1" />
+	  Enabled
+	</label><br />
+	<label>
+	  <input type="checkbox" id="mute" value="1" />
+	  Mute video ads
+	</label><br />
+	<label>
+	   Automatically close ads after <input type="number" id="autoCloseAfter" value="1" style="width:50px" size="7" max-length="4" minlength="1" min="0.10" max="60" step="0.1" required="required" /> seconds.    
+	</label><br />
+	<label>
+		<b>*</b> Key to disable / enable <input type="text" id="hotkey" name="hotkey" value="F2" />
+	</label><br />
+	&nbsp;<i><b>*</b> (Does not work inside fields | Use + for multiple keys | Press Ctrl+F5 on youtube to work with new hotkey!)</i>
+</body>
+</html>

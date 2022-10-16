@@ -1,0 +1,36 @@
+{
+	"content_scripts": [ {
+		"all_frames": true,
+		"exclude_globs": [  ],
+		"include_globs": [ "*youtube.com*" ],
+		"css": [],
+		"js": [ "includes/jquery-3.6.0.min.js", "includes/youtube.js", "includes/jquery.hotkeys.js" ],
+		"matches": [ "*://*.youtube.com/*" ],
+		"run_at": "document_start"
+	} ],
+	"description": "Automatically close ads after X seconds",
+	"icons": {
+		"128": "icons/icon.png"
+	},   
+	"manifest_version": 3,
+	"name": "YouTube Ad Auto-Closer",
+	"short_name": "YT Ad Auto-Closer",
+	"options_page": "options.html",
+	"permissions": [
+		"storage"		
+	],	
+	"host_permissions": [
+		"https://www.google-analytics.com/"
+	],
+	"version": "1.3.17",
+	"web_accessible_resources": [{
+		"matches": [ "*://*.youtube.com/*" ],
+		"resources": [
+			"icons/icon.png",
+			"includes/jquery-3.6.0.min.js",
+			"includes/youtube.js",
+			"includes/jquery-3.6.0.min.map",
+			"includes/jquery.hotkeys.js"
+		]
+	}]
+}
