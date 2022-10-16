@@ -3,17 +3,17 @@ YouTube Ad Auto-closer
 ![Logo](https://addons.mozilla.org/user-media/previews/thumbs/192/192740.jpg?modified=1622132899)
 ====
 This is NOT an Ad Blocker, It just closes faster.
-Support YouTubers by disabling AdBlock / uBlock on youtube.com and use this extension to close the ads as soon as possible after the Close / Skip button is available.
+Support YouTubers by disabling AdBlock / uBlock on youtube.com and use this extension to close the ads as soon as possible after the Close / Skip button is available.<br/>
 
-New Feature: Automatically mute video ads (Changeable on Options)
-New Feature: Disable / Enable the extension by pressing F1 (Firefox) or F2 (Google Chrome) (Changeable on Options)
+New Feature: Automatically mute video ads (Changeable on Options)<br/>
+New Feature: Disable / Enable the extension by pressing F1 (Firefox) or F2 (Google Chrome) (Changeable on Options)<br/>
 
-This is not an YouTube official extension.
-Youtube is a trade-mark by Google.
-Bender Bending Rodríguez, Futurama is created by Matt Groening for Fox Broadcasting Company.
-All the logos and pictures here is used under fair-use, And is belonged by the corresponding owners.
+This is not an YouTube official extension.<br/>
+Youtube is a trade-mark by Google.<br/>
+Bender Bending Rodríguez, Futurama is created by Matt Groening for Fox Broadcasting Company.<br/>
+All the logos and pictures here is used under fair-use, And is belonged by the corresponding owners.<br/>
 
-This add-on uses google analytics for anonymous statistics.
+This add-on uses google analytics for anonymous statistics.<br/>
 
 ### Download
 YouTube Ad auto-closer for [Firefox][Firefox] and [Google Chrome][GoogleChrome]
