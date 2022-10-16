@@ -9,7 +9,7 @@ New Feature: Automatically mute video ads (Changeable on Options)<br/>
 New Feature: Disable / Enable the extension by pressing F1 (Firefox) or F2 (Google Chrome) (Changeable on Options)<br/>
 
 This is not an YouTube official extension.<br/>
-Youtube is a trade-mark by Google.<br/>
+YouTube is a trade-mark by Google.<br/>
 Bender Bending Rodríguez, Futurama is created by Matt Groening for Fox Broadcasting Company.<br/>
 All the logos and pictures here is used under fair-use, And is belonged by the corresponding owners.<br/>
 
