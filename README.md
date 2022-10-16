@@ -13,7 +13,7 @@ YouTube is a trade-mark by Google.<br/>
 Bender Bending Rodríguez, Futurama is created by Matt Groening for Fox Broadcasting Company.<br/>
 All the logos and pictures here is used under fair-use, And is belonged by the corresponding owners.<br/>
 
-This add-on uses google analytics for anonymous statistics.<br/>
+<i>This add-on uses google analytics for anonymous statistics.</i><br/>
 
 ### Download
 YouTube Ad auto-closer for [Firefox][Firefox] and [Google Chrome][GoogleChrome]
