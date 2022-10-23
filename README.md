@@ -1,6 +1,6 @@
 YouTube Ad Auto-closer
 =====
-![Logo](https://addons.mozilla.org/user-media/previews/thumbs/192/192740.jpg?modified=1622132899)
+![Logo](https://raw.githubusercontent.com/ZionDevelopers/youtube-ad-auto-closer/main/firefox-banner.jpg)
 ====
 This is NOT an Ad Blocker, It just closes faster.<br/>
 Support YouTubers by disabling AdBlock / uBlock on youtube.com and use this extension to close the ads as soon as possible after the Close / Skip button is available.<br/>
