@@ -19,6 +19,7 @@ var video = 'none';
  * @constructor 
  */
 function run() {
+	console.log('YouTube Ad Auto-Closer loading...');
 	// Run autoCloser function every X milliseconds
     autoCloserId = setInterval(autoCloser, 100);
 }
