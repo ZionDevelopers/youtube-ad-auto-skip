@@ -168,7 +168,7 @@ function sendStatistics() {
 		"events": [{
 		  "name": "page_view",
 		  "params": {				
-			"page_title": 'YouTube',
+			"page_title": 'YouTube: Chrome',
 			"page_location": 'https://www.youtube.com'
 		  }
 		}]

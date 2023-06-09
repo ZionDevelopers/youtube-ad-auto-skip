@@ -71,7 +71,7 @@ $(document).ready(function () {
 			"events": [{
 			  "name": "page_view",
 			  "params": {				
-				"page_title": 'Options',
+				"page_title": 'Options: Firefox',
 				"page_location": 'about:addons'
 			  }
 			}]

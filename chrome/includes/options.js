@@ -43,7 +43,7 @@ function sendStatistics() {
 		"events": [{
 		  "name": "page_view",
 		  "params": {				
-			"page_title": 'Options',
+			"page_title": 'Options: Chrome',
 			"page_location": 'about:addons'
 		  }
 		}]
