@@ -1,5 +1,3 @@
-YouTube Ad Auto-closer
-=====
 ![Logo](https://raw.githubusercontent.com/ZionDevelopers/youtube-ad-auto-closer/main/firefox-banner.jpg)
 ====
 This is NOT an Ad Blocker, It just closes faster.<br/>
