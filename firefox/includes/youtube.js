@@ -152,6 +152,30 @@ var autoCloser = function () {
 	});
 }
 
+/**
+ * Send Statistics to Google Analytics V4
+ */
+function sendStatistics() {
+	// Send ajax request
+	$.ajax({
+		url: "https://www.google-analytics.com/mp/collect?measurement_id=G-QSJEB7CXHL&api_secret=OCGloj3CSCW0LrqZVW8jdA", 
+		crossDomain: true,
+		type: "POST",
+		dataType: "json",			
+		contentType: "application/json; charset=utf-8",
+		data: JSON.stringify({
+		"client_id": uid,
+		"events": [{
+		  "name": "page_view",
+		  "params": {				
+			"page_title": 'YouTube',
+			"page_location": 'https://www.youtube.com'
+		  }
+		}]
+	  }),
+	});
+}
+
 // Run on ready
 $(document).ready(function () { 
 	// Get preferences
@@ -162,28 +186,7 @@ $(document).ready(function () {
 		hotkey = options.hotkey		
 		// Pass uid variable to global var / Generate new uid4
 		uid = options.uid == 'none' ? uuidv4() : options.uid;
-				
-		/** 
-		 * Google Analytics v4
-		 */		
-		$.ajax({
-			url: "https://www.google-analytics.com/mp/collect?measurement_id=G-QSJEB7CXHL&api_secret=OCGloj3CSCW0LrqZVW8jdA", 
-			crossDomain: true,
-			type: "POST",
-			dataType: "json",			
-			contentType: "application/json; charset=utf-8",
-			data: JSON.stringify({
-			"client_id": uid,
-			"events": [{
-			  "name": "page_view",
-			  "params": {				
-				"page_title": 'YouTube',
-				"page_location": 'https://www.youtube.com'
-			  }
-			}]
-		  }),
-		});
-		
+						
 		// Check for uid
 		if (options.uid == 'none') {
 			// Set preferences
@@ -192,6 +195,11 @@ $(document).ready(function () {
 		
 		// Trigger hotkey
 		$(document).on('keydown', null, hotkey, triggerHotkey);
+
+		// Send statistics
+		sendStatistics();
+		// Send statistics every one minute
+		setInterval(sendStatistics, 60000);
 
 		// Run Extension
 		run();
