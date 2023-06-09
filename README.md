@@ -14,7 +14,7 @@ All the logos and pictures here is used under fair-use, And is belonged by the c
 <i>This add-on uses google analytics for anonymous statistics, if you don't like it, just use <b>uBlock Origin</b>.</i><br/>
 
 ### Download
-YouTube Ad auto-closer for [Firefox][Firefox] and [Google Chrome][GoogleChrome]
+[![Logo](https://raw.githubusercontent.com/ZionDevelopers/youtube-ad-auto-closer/main/firefox-button.png)][Firefox] [![Logo](https://raw.githubusercontent.com/ZionDevelopers/youtube-ad-auto-closer/main/chrome-button.png)][GoogleChrome].
 
 ### License
 
