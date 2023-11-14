@@ -5,9 +5,8 @@ var autoCloserId = 0;
 var enabled = true;
 var hotkey = 'F1';
 var uid = 'none';
-var ads = {
-	videoBanner: 'div.video-ads button.ytp-ad-overlay-close-button, div.video-ads div.close-padding', 
-	videoSkip: 'div.video-ads button.ytp-ad-skip-button, div.video-ads button.videoAdUiSkipButton'
+var ads = {	
+	videoSkip: 'div.video-ads div.ytp-ad-skip-ad-slot div.ytp-ad-skip-button-slot button.ytp-ad-skip-button-modern'	
 };
 var mute = true;
 var muted = false;
