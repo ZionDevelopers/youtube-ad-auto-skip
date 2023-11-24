@@ -3,8 +3,8 @@
 This is NOT an Ad Blocker, It just closes faster.<br/>
 Support YouTubers by disabling AdBlock / uBlock on youtube.com and use this extension to skip the ads as soon as possible after the Skip button is available.<br/>
 
-New Feature: Automatically mute video ads (Changeable on Options)<br/>
-New Feature: Disable / Enable the extension by pressing F1 (Firefox) or F2 (Google Chrome) (Changeable on Options)<br/>
+Feature: Automatically mute video ads (Changeable on Options)<br/>
+Feature: Disable / Enable the extension by pressing F1 (Firefox) or F2 (Google Chrome) (Changeable on Options)<br/>
 New Feature: Change the video's ad playback speed (default 16) <br />
 
 This is not an YouTube official extension.<br/>
