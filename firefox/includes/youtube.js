@@ -1,9 +1,10 @@
 // Define global variables
-var seconds = 1 * 1000;
+var seconds = 0.10 * 1000;
 var closeId = 0;
 var autoCloserId = 0;
 var enabled = true;
 var hotkey = 'F1';
+var adPlaybackSpeed = 16;
 var uid = 'none';
 var ads = {	
 	videoSkip: 'div.video-ads div.ytp-ad-skip-ad-slot div.ytp-ad-skip-button-slot button.ytp-ad-skip-button-modern'	
@@ -18,7 +19,7 @@ var video = 'none';
  * @constructor 
  */
 function run() {
-	console.log('YouTube Ad Auto-Closer is loading...');
+	console.log('YouTube Ad Auto-Skip is loading...');
 	// Run autoCloser function every X milliseconds
     autoCloserId = setInterval(autoCloser, 100);
 }
@@ -40,13 +41,13 @@ function triggerHotkey () {
 	// Revert enabled state
 	enabled = !enabled;
 	// Add html alert
-	$('body').append('<div style="display: none; background-color:' + (enabled ? 'green':'red') + ';color: #fff;font-family: Arial; font-size: 12px; margin: 0 auto; z-index: 9999;position: absolute" id="youtube-ad-autocloser-alert">YouTube Ad Auto-Closer: <b>'+(enabled ? 'Enabled!' : 'Disabled!')+'</b></div>');
+	$('body').append('<div style="display: none; background-color:' + (enabled ? 'green':'red') + ';color: #fff;font-family: Arial; font-size: 12px; margin: 0 auto; z-index: 9999;position: absolute" id="youtube-ad-auto-skip-alert">YouTube Ad Auto-Skip: <b>'+(enabled ? 'Enabled!' : 'Disabled!')+'</b></div>');
 	// Fade in the html alert
-	$('div#youtube-ad-autocloser-alert').fadeIn();
+	$('div#youtube-ad-auto-skip-alert').fadeIn();
 	// Trigger timout for the removal of the html alert
 	setTimeout(function () {
 		// Fade Out the html alert
-		$('div#youtube-ad-autocloser-alert').fadeOut(function () {
+		$('div#youtube-ad-auto-skip-alert').fadeOut(function () {
 			// Remove the html alert
 			$(this).remove();
 		});
@@ -96,11 +97,13 @@ function closeAd(selector, options) {
  */
 var autoCloser = function () {
 	// Get Preferences
-	chrome.storage.sync.get({enabled: true, autoCloseAfter: 1, mute: true}, function (options) {
+	chrome.storage.sync.get({enabled: true, autoCloseAfter: 0.10, mute: true, adPlaybackSpeed: 16}, function (options) {
 		// Pass the enable variable to global var
 		enabled = options.enabled;
 		// Pass the mute variable to global
 		mute = options.mute;
+		// Pass ad playback speed to global
+		adPlaybackSpeed = options.adPlaybackSpeed;
 		
 		// The plugin is enabled?
 		if (enabled) {			
@@ -127,6 +130,8 @@ var autoCloser = function () {
 							// Mute video
 							video.muted = true;
 						}
+						// Adjust ad's playback speed
+						document.getElementsByTagName('video')[0].playbackRate = adPlaybackSpeed;
 						// Set state to muted
 						muted = true;
 					}

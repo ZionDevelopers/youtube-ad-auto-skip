@@ -2,6 +2,7 @@
 var enabled = true;
 var hotkey = 'F2';
 var uid = 'none';
+var adPlaybackSpeed = 16;
 
 /**
  * Trigger Hotkey
@@ -57,10 +58,11 @@ $(document).ready(function () {
 	// Get preferences
     chrome.storage.sync.get({
         enabled: true,
-        autoCloseAfter: 1,
+        autoCloseAfter: 0.10,
 		hotkey: 'F2',
 		uid: 'none',
-		mute: true
+		mute: true,
+		adPlaybackSpeed: 16
 	}, function(options) {
 		// Pass the enable var to global
 		enabled = options.enabled;	
@@ -70,6 +72,8 @@ $(document).ready(function () {
 		uid = options.uid == 'none' ? uuidv4() : options.uid;
 		// Pass the mute var to global
 		mute = options.mute;
+		// Pass ad playback speed to global
+		adPlaybackSpeed = options.adPlaybackSpeed
 		
 		// Check/Uncheck checkbox
 		$("input#enabled").prop("checked", enabled);
@@ -79,6 +83,8 @@ $(document).ready(function () {
 		$("input#autoCloseAfter").val(options.autoCloseAfter);
 		// Set hotkey to input
 		$("input#hotkey").val(hotkey);	
+		// Set ad playback speed to input
+		$("input#adPlaybackSpeed").val(adPlaybackSpeed);
 		// Set hotkey trigger
 		$(document).on('keydown', null, hotkey, triggerHotkey);	
 	
@@ -136,6 +142,19 @@ $(document).ready(function () {
 					$(document).on('keydown', null, newHotkey, triggerHotkey);
 				}
 			});		
+		});
+
+		// Trigger changes in input speed
+		$("input#adPlaybackSpeed").change(function () {
+			var speed = $("input#adPlaybackSpeed").val();
+			// Parse speed
+			speed = parseFloat(speed);
+			speed = isNaN(speed) ? 1 : speed;
+			speed = speed <= 0 ? 0.10 : speed;
+			// Set seconds to input
+			$("input#adPlaybackSpeed").val(speed);
+			// Set preferences
+			chrome.storage.sync.set({adPlaybackSpeed: speed}, function() {});
 		});
 
 		// Send statistics
