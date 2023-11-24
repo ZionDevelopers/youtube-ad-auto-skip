@@ -18,11 +18,8 @@
 	"options_page": "options.html",
 	"permissions": [
 		"storage"		
-	],	
-	"host_permissions": [
-		"https://www.google-analytics.com/"
-	],
-	"version": "1.3.23",
+	],		
+	"version": "1.3.24",
 	"web_accessible_resources": [{
 		"matches": [ "*://*.youtube.com/*" ],
 		"resources": [
