@@ -1,4 +1,4 @@
-![Logo](https://raw.githubusercontent.com/ZionDevelopers/youtube-ad-auto-closer/main/firefox-banner.jpg)
+![Logo](https://raw.githubusercontent.com/ZionDevelopers/youtube-ad-auto-closer/main/images/firefox-banner.jpg)
 ====
 This is NOT an Ad Blocker, It just closes faster.<br/>
 Support YouTubers by disabling AdBlock / uBlock on youtube.com and use this extension to skip the ads as soon as possible after the Skip button is available.<br/>
@@ -13,7 +13,7 @@ Bender Bending Rodríguez, Futurama is created by Matt Groening for Fox Broadcas
 All the logos and pictures here is used under fair-use, And is belonged by the corresponding owners.<br/>
 
 ### Download
-[![Logo](https://raw.githubusercontent.com/ZionDevelopers/youtube-ad-auto-skip/main/firefox-button.png)][Firefox] [![Logo](https://raw.githubusercontent.com/ZionDevelopers/youtube-ad-auto-skip/main/chrome-button.png)][GoogleChrome].
+[![Logo](https://raw.githubusercontent.com/ZionDevelopers/youtube-ad-auto-skip/main/images/firefox-button.png)][Firefox] [![Logo](https://raw.githubusercontent.com/ZionDevelopers/youtube-ad-auto-skip/main/images/chrome-button.png)][GoogleChrome].
 
 ### License
 
