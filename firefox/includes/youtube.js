@@ -156,30 +156,6 @@ var autoCloser = function () {
 	});
 }
 
-/**
- * Send Statistics to Google Analytics V4
- */
-function sendStatistics() {
-	// Send ajax request
-	$.ajax({
-		url: "https://www.google-analytics.com/mp/collect?measurement_id=G-QSJEB7CXHL&api_secret=OCGloj3CSCW0LrqZVW8jdA", 
-		crossDomain: true,
-		type: "POST",
-		dataType: "json",			
-		contentType: "application/json; charset=utf-8",
-		data: JSON.stringify({
-		"client_id": uid,
-		"events": [{
-		  "name": "page_view",
-		  "params": {				
-			"page_title": 'YouTube: Firefox',
-			"page_location": 'https://www.youtube.com'
-		  }
-		}]
-	  }),
-	});
-}
-
 // Run on ready
 $(document).ready(function () { 
 	// Get preferences
@@ -199,11 +175,6 @@ $(document).ready(function () {
 		
 		// Trigger hotkey
 		$(document).on('keydown', null, hotkey, triggerHotkey);
-
-		// Send statistics
-		sendStatistics();
-		// Send statistics every one minute
-		setInterval(sendStatistics, 60000);
 
 		// Run Extension
 		run();

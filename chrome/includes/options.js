@@ -27,31 +27,6 @@ function uuidv4() {
   );
 }
 
-/** 
- * Send Statistics to Google Analytics V4
- * @constructor
- */		
-function sendStatistics() {
-	// Send ajax request
-	$.ajax({
-		url: "https://www.google-analytics.com/mp/collect?measurement_id=G-QSJEB7CXHL&api_secret=OCGloj3CSCW0LrqZVW8jdA", 
-		crossDomain: true,
-		type: "POST",
-		dataType: "json",
-		contentType: "application/json; charset=utf-8",
-		data: JSON.stringify({
-		"client_id": uid,
-		"events": [{
-		  "name": "page_view",
-		  "params": {				
-			"page_title": 'Options: Chrome',
-			"page_location": 'about:addons'
-		  }
-		}]
-		}),
-	});
-}
-
 // Restores select box and checkbox state using the preferences
 // stored in chrome.storage.
 $(document).ready(function () {	
@@ -156,10 +131,5 @@ $(document).ready(function () {
 			// Set preferences
 			chrome.storage.sync.set({adPlaybackSpeed: speed}, function() {});
 		});
-
-		// Send statistics
-		sendStatistics();
-		// Send statistics every one minute
-		setInterval(sendStatistics, 60000);
     });	
 });
