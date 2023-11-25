@@ -5,7 +5,6 @@ var autoCloserId = 0;
 var enabled = true;
 var hotkey = 'F2';
 var adPlaybackSpeed = 16;
-var uid = 'none';
 var ads = {	
 	videoSkip: 'div.video-ads div.ytp-ad-skip-ad-slot div.ytp-ad-skip-button-slot button.ytp-ad-skip-button-modern'	
 };
@@ -22,15 +21,6 @@ function run() {
 	console.log('YouTube Ad Auto-Skip is loading...');
 	// Run autoCloser function every X milliseconds
     autoCloserId = setInterval(autoCloser, 100);
-}
-/**
- * Generate unique id
- * @constructor 
- */
-function uuidv4() {
-  return ([1e7]+-1e3+-4e3+-8e3+-1e11).replace(/[018]/g, c =>
-    (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16)
-  );
 }
 
 /**
@@ -131,7 +121,7 @@ var autoCloser = function () {
 							video.muted = true;
 						}
 						// Adjust ad's playback speed
-						document.getElementsByTagName('video')[0].playbackRate = adPlaybackSpeed;
+						video.playbackRate = adPlaybackSpeed;
 						// Set state to muted
 						muted = true;
 					}
@@ -164,14 +154,6 @@ $(document).ready(function () {
 		enabled = options.enabled;
 		// Pass the hotkey variable to global var
 		hotkey = options.hotkey		
-		// Pass uid variable to global var / Generate new uid4
-		uid = options.uid == 'none' ? uuidv4() : options.uid;
-						
-		// Check for uid
-		if (options.uid == 'none') {
-			// Set preferences
-			chrome.storage.sync.set({uid: uid}, function() {});	
-		}
 		
 		// Trigger hotkey
 		$(document).on('keydown', null, hotkey, triggerHotkey);
