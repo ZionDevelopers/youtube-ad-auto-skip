@@ -103,11 +103,17 @@ var autoCloser = function () {
 				closeAd(selector, options);			
 			});
 
+			// Set video
+			video = $('div#movie_player video')[0];
+
+			// Check if video ad is visible and video playback is 1
+			if ($(videoAdDetector).is(':visible') && video.playbackRate == 1){
+				// Adjust ad's playback speed
+				video.playbackRate = adPlaybackSpeed;
+			}
+
 			// Mute option enabled?
-			if (mute) {
-				// Set video
-				video = $('div#movie_player video')[0];
-				
+			if (mute) {				
 				// Check if video ad is present and video is not muted
 				if($(videoAdDetector).is(':visible') && !muted) {
 					// Check if video is not muted
@@ -120,8 +126,7 @@ var autoCloser = function () {
 							// Mute video
 							video.muted = true;
 						}
-						// Adjust ad's playback speed
-						video.playbackRate = adPlaybackSpeed;
+						
 						// Set state to muted
 						muted = true;
 					}
