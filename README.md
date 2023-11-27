@@ -8,9 +8,6 @@ Feature: Disable / Enable the extension by pressing F1 (Firefox) or F2 (Google C
 New Feature: Change the video's ad playback speed (default 16) <br />
 
 This is not an YouTube official extension.<br/>
-YouTube is a trade-mark by Google.<br/>
-Bender Bending Rodríguez, Futurama is created by Matt Groening for Fox Broadcasting Company.<br/>
-All the logos and pictures here is used under fair-use, And is belonged by the corresponding owners.<br/>
 
 ### Download
 [![Logo](https://raw.githubusercontent.com/ZionDevelopers/youtube-ad-auto-skip/main/images/firefox-button.png)][Firefox] [![Logo](https://raw.githubusercontent.com/ZionDevelopers/youtube-ad-auto-skip/main/images/chrome-button.png)][GoogleChrome].
