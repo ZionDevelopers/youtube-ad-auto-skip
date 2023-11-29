@@ -4,7 +4,7 @@ var closeId = 0;
 var autoCloserId = 0;
 var enabled = true;
 var hotkey = 'F2';
-var adPlaybackSpeed = 16;
+var adsPlaybackSpeed = 1;
 var ads = {	
 	videoSkip: 'div.video-ads div.ytp-ad-skip-ad-slot div.ytp-ad-skip-button-slot button.ytp-ad-skip-button-modern'	
 };
@@ -45,7 +45,7 @@ function triggerHotkey () {
 	2000);
 	// Set preferences
 	chrome.storage.sync.set({enabled: enabled}, function() {});	
-	
+
 	// Check if addon was just disabled
 	if(!enabled) {
 		// Set video
@@ -56,10 +56,10 @@ function triggerHotkey () {
 			// Adjust ad's playback speed
 			video.playbackRate = 1;
 		}
-		
+
 		// Check if video was muted
 		if (video.muted) {
-			// UnMute video
+			// Unmute video
 			video.muted = false;
 		}
 	}
@@ -105,13 +105,13 @@ function closeAd(selector, options) {
  */
 var autoCloser = function () {
 	// Get Preferences
-	chrome.storage.sync.get({enabled: true, autoCloseAfter: 0.10, mute: true, adPlaybackSpeed: 16}, function (options) {
+	chrome.storage.sync.get({enabled: true, autoCloseAfter: 0.10, mute: true, adsPlaybackSpeed: 1}, function (options) {
 		// Pass the enable variable to global var
 		enabled = options.enabled;
 		// Pass the mute variable to global
 		mute = options.mute;
 		// Pass ad playback speed to global
-		adPlaybackSpeed = options.adPlaybackSpeed;
+		adsPlaybackSpeed = options.adsPlaybackSpeed;
 		
 		// The plugin is enabled?
 		if (enabled) {			
@@ -127,7 +127,7 @@ var autoCloser = function () {
 			// Check if video ad is visible and video playback is 1
 			if ($(videoAdDetector).is(':visible') && video.playbackRate == 1){
 				// Adjust ad's playback speed
-				video.playbackRate = adPlaybackSpeed;
+				video.playbackRate = adsPlaybackSpeed;
 			}
 
 			// Mute option enabled?
@@ -137,7 +137,7 @@ var autoCloser = function () {
 					// Check if video is not muted
 					if (!video.muted) {						
 						// Mute video
-						video.muted = true;						
+						video.muted = true;
 						
 						// Set state to muted
 						muted = true;
@@ -160,7 +160,7 @@ var autoCloser = function () {
 // Run on ready
 $(document).ready(function () { 
 	// Get preferences
-	chrome.storage.sync.get({enabled: true, hotkey: 'F2', uid: 'none', mute: true}, function (options) {
+	chrome.storage.sync.get({enabled: true, hotkey: 'F2', mute: true}, function (options) {
 		// Pass the enable variable to global var
 		enabled = options.enabled;
 		// Pass the hotkey variable to global var

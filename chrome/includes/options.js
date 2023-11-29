@@ -1,7 +1,7 @@
 // Define global vars
 var enabled = true;
 var hotkey = 'F2';
-var adPlaybackSpeed = 16;
+var adsPlaybackSpeed = 1;
 
 /**
  * Trigger Hotkey
@@ -25,7 +25,7 @@ $(document).ready(function () {
         autoCloseAfter: 0.10,
 		hotkey: 'F2',
 		mute: true,
-		adPlaybackSpeed: 16
+		adsPlaybackSpeed: 1
 	}, function(options) {
 		// Pass the enable var to global
 		enabled = options.enabled;	
@@ -34,7 +34,7 @@ $(document).ready(function () {
 		// Pass the mute var to global
 		mute = options.mute;
 		// Pass ad playback speed to global
-		adPlaybackSpeed = options.adPlaybackSpeed
+		adsPlaybackSpeed = options.adsPlaybackSpeed
 		
 		// Check/Uncheck checkbox
 		$("input#enabled").prop("checked", enabled);
@@ -45,16 +45,10 @@ $(document).ready(function () {
 		// Set hotkey to input
 		$("input#hotkey").val(hotkey);	
 		// Set ad playback speed to input
-		$("input#adPlaybackSpeed").val(adPlaybackSpeed);
+		$("input#adsPlaybackSpeed").val(adsPlaybackSpeed);
 		// Set hotkey trigger
 		$(document).on('keydown', null, hotkey, triggerHotkey);	
-	
-		// Check for uid
-		if (options.uid == 'none') {
-			// Set preferences
-			chrome.storage.sync.set({uid: uid}, function() {});	
-		}		
-		
+			
 		// Saves options to chrome.storage
 		$("input#enabled").click(function () {
 			// Set preferences
@@ -106,16 +100,17 @@ $(document).ready(function () {
 		});
 
 		// Trigger changes in input speed
-		$("input#adPlaybackSpeed").change(function () {
-			var speed = $("input#adPlaybackSpeed").val();
+		$("input#adsPlaybackSpeed").change(function () {
+			var speed = $("input#adsPlaybackSpeed").val();
 			// Parse speed
 			speed = parseFloat(speed);
 			speed = isNaN(speed) ? 1 : speed;
 			speed = speed <= 0 ? 0.10 : speed;
+			speed = speed > 16 ? 16 : speed;
 			// Set seconds to input
-			$("input#adPlaybackSpeed").val(speed);
+			$("input#adsPlaybackSpeed").val(speed);
 			// Set preferences
-			chrome.storage.sync.set({adPlaybackSpeed: speed}, function() {});
+			chrome.storage.sync.set({adsPlaybackSpeed: speed}, function() {});
 		});
     });	
 });
