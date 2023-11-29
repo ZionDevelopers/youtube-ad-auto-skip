@@ -45,6 +45,24 @@ function triggerHotkey () {
 	2000);
 	// Set preferences
 	chrome.storage.sync.set({enabled: enabled}, function() {});	
+	
+	// Check if addon was just disabled
+	if(!enabled) {
+		// Set video
+		video = $('div#movie_player video')[0];
+
+		// Check if video ad is visible and video playback is anything other than 1
+		if ($(videoAdDetector).is(':visible') && video.playbackRate != 1){
+			// Adjust ad's playback speed
+			video.playbackRate = 1;
+		}
+		
+		// Check if video was muted
+		if (video.muted) {
+			// Click on mute button
+			$('div#movie_player button.ytp-mute-button').click();
+		}
+	}
 }
 
 /**
