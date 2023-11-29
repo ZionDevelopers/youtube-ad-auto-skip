@@ -145,15 +145,9 @@ var autoCloser = function () {
 				// Check if video ad is not present but the video is muted
 				} else if (!$(videoAdDetector).is(':visible') && muted) {
 					// Check if video is muted
-					if (video.muted) {
-						// Check if miniplayer is not visible
-						if (!$('a.ytd-miniplayer').is(':visible')) {
-							// Click on mute button
-							$('div#movie_player button.ytp-mute-button').click();
-						} else {
-							// Unmute video
-							video.muted = false;
-						}
+					if (video.muted) {						
+						// Unmute video
+						video.muted = false;						
 					}
 					// Unmute
 					muted = false;
