@@ -59,8 +59,8 @@ function triggerHotkey () {
 		
 		// Check if video was muted
 		if (video.muted) {
-			// Click on mute button
-			$('div#movie_player button.ytp-mute-button').click();
+			// UnMute video
+			video.muted = false;
 		}
 	}
 }
@@ -135,15 +135,9 @@ var autoCloser = function () {
 				// Check if video ad is present and video is not muted
 				if($(videoAdDetector).is(':visible') && !muted) {
 					// Check if video is not muted
-					if (!video.muted) {
-						// Check if miniplayer is not visible
-						if (!$('a.ytd-miniplayer').is(':visible')) {
-							// Click on mute button
-							$('div#movie_player button.ytp-mute-button').click();
-						} else {
-							// Mute video
-							video.muted = true;
-						}
+					if (!video.muted) {						
+						// Mute video
+						video.muted = true;						
 						
 						// Set state to muted
 						muted = true;
@@ -151,15 +145,9 @@ var autoCloser = function () {
 				// Check if video ad is not present but the video is muted
 				} else if (!$(videoAdDetector).is(':visible') && muted) {
 					// Check if video is muted
-					if (video.muted) {
-						// Check if miniplayer is not visible
-						if (!$('a.ytd-miniplayer').is(':visible')) {
-							// Click on mute button
-							$('div#movie_player button.ytp-mute-button').click();
-						} else {
-							// Unmute video
-							video.muted = false;
-						}
+					if (video.muted) {						
+						// Unmute video
+						video.muted = false;						
 					}
 					// Unmute
 					muted = false;
