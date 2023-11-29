@@ -19,7 +19,7 @@
 	"permissions": [
 		"storage"		
 	],		
-	"version": "1.4.5",
+	"version": "1.4.6",
 	"web_accessible_resources": [{
 		"matches": [ "*://*.youtube.com/*" ],
 		"resources": [

@@ -26,6 +26,6 @@
 	"permissions": [
 		"storage"
 	],
-	"version": "1.4.5",
+	"version": "1.4.6",
 	"web_accessible_resources": ["includes/jquery-3.7.1.min.js", "includes/jquery.hotkeys.js", "includes/youtube.js", "jquery-3.7.1.min.map" ]
 }
