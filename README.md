@@ -17,6 +17,6 @@ This is not an YouTube official extension.<br/>
 This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.
 To view a copy of this license, visit [Common Creative's Website][License].
 
-[GoogleChrome]: <https://chrome.google.com/webstore/detail/youtube-ad-auto-closer/janhkcfgfnafdebdmlbnhopmnoiepmpc>
+[GoogleChrome]: <https://chromewebstore.google.com/detail/janhkcfgfnafdebdmlbnhopmnoiepmpc>
 [Firefox]: <https://addons.mozilla.org/en-US/firefox/addon/youtube-ad-auto-skip/>
 [License]: <https://creativecommons.org/licenses/by-nc-sa/4.0/>
