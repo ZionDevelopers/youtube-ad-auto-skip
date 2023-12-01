@@ -5,7 +5,7 @@ Support YouTubers by disabling AdBlock / uBlock on youtube.com and use this exte
 
 Feature: Automatically mute video ads (Changeable on Options)<br/>
 Feature: Disable / Enable the extension by pressing F1 (Firefox) or F2 (Google Chrome) (Changeable on Options)<br/>
-New Feature: Change the video's ad playback speed (default 16) <br />
+New Feature: Change the video's ad playback speed (Changeable on Options until 16x) <br />
 
 This is not an YouTube official extension.<br/>
 
