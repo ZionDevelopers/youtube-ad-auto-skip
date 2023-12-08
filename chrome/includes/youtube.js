@@ -18,7 +18,6 @@ var video = 'none';
  * @constructor 
  */
 function run() {
-	console.log('YouTube Ad Auto-Skip is loading...');
 	// Run autoCloser function every X milliseconds
     autoCloserId = setInterval(autoCloser, 100);
 }
@@ -61,6 +60,8 @@ function triggerHotkey () {
 		if (video.muted) {
 			// Unmute video
 			video.muted = false;
+			// Unmute var
+			muted = false;
 		}
 	}
 }
@@ -91,10 +92,10 @@ function closeAd(selector, options) {
 					// Close Ad
 					$(selector).click();					
 				}
-			});
-			
-			// Restart timer
-			run();
+				
+				// Restart timer
+				run();
+			});			
 		}, seconds);
 	}		
 }
@@ -168,6 +169,9 @@ $(document).ready(function () {
 		
 		// Trigger hotkey
 		$(document).on('keydown', null, hotkey, triggerHotkey);
+
+		// Show log message
+		console.log('YouTube Ad Auto-Skip is loading...');
 
 		// Run Extension
 		run();
