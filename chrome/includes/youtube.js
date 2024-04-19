@@ -8,7 +8,7 @@ To view a copy of this license, visit <http://creativecommons.org/licenses/by-nc
 ----------------------------------------------------------------------------------------------------------------------------
 
 $Id$
-Version 1.4.8 - 2024-01-05
+Version 1.4.11 - 2024-04-19
 */
 
 // Define global variables
@@ -19,11 +19,12 @@ var enabled = true;
 var hotkey = 'F2';
 var adsPlaybackSpeed = 1;
 var ads = {	
-	videoSkip: 'div.video-ads div.ytp-ad-skip-ad-slot div.ytp-ad-skip-button-slot button.ytp-ad-skip-button-modern'	
+	videoSkip: 'div.video-ads button.ytp-skip-ad-button',
+	videoSkip2: 'div.video-ads button.ytp-ad-skip-button-modern'	
 };
 var mute = true;
 var muted = false;
-var videoAdDetector = 'div.video-ads div.ytp-ad-player-overlay-instream-info';
+var videoAdDetector = 'div.video-ads div.ytp-ad-player-overlay-layout__skip-or-preview-container, div.video-ads div.ytp-ad-player-overlay-instream-info';
 var video = 'none';
 
 /**
